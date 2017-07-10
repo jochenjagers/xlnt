@@ -62,7 +62,7 @@ std::string utf16_to_utf8(const std::u16string &utf16_string)
 {
     // TODO - Undo this after changing to newer compiler
     //return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}.to_bytes(utf16_string);
-    string result;
+    std::string result;
     for(char x : utf16_string)
         result += x;
     return result;
