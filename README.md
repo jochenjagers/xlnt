@@ -29,7 +29,7 @@ int main()
     wb.save("example.xlsx");
     return 0;
 }
-// compile with -std=c++14 -Ixlnt/include -lxlnt
+// compile with -std=c++11 -Ixlnt/include -lxlnt
 ```
 
 ## Documentation
