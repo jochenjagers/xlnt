@@ -65,7 +65,7 @@ const std::unordered_map<int, std::string> known_locales()
     return *all;
 }
 
-[[noreturn]] void unhandled_case_error()
+void unhandled_case_error()
 {
     throw xlnt::exception("unhandled");
 }
