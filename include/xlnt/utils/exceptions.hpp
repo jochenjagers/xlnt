@@ -52,7 +52,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~exception() noexcept;
+    virtual ~exception() noexcept (true);
 
     /// <summary>
     /// Sets the message after the xlnt::exception is constructed. This can show
@@ -86,7 +86,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_parameter() noexcept;
+    virtual ~invalid_parameter() noexcept (true);
 };
 
 /// <summary>
@@ -108,7 +108,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_sheet_title() noexcept;
+    virtual ~invalid_sheet_title() noexcept (true);
 };
 
 /// <summary>
@@ -130,7 +130,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~missing_number_format() noexcept;
+    virtual ~missing_number_format() noexcept (true);
 };
 
 /// <summary>
@@ -153,7 +153,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_file() noexcept;
+    virtual ~invalid_file() noexcept (true);
 };
 
 /// <summary>
@@ -176,7 +176,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~illegal_character() noexcept;
+    virtual ~illegal_character() noexcept (true);
 };
 
 /// <summary>
@@ -198,7 +198,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_data_type() noexcept;
+    virtual ~invalid_data_type() noexcept (true);
 };
 
 /// <summary>
@@ -220,7 +220,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_column_index() noexcept;
+    virtual ~invalid_column_index() noexcept (true);
 };
 
 /// <summary>
@@ -247,7 +247,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_cell_reference() noexcept;
+    virtual ~invalid_cell_reference() noexcept (true);
 };
 
 /// <summary>
@@ -269,7 +269,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_attribute() noexcept;
+    virtual ~invalid_attribute() noexcept (true);
 };
 
 /// <summary>
@@ -291,7 +291,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~key_not_found() noexcept;
+    virtual ~key_not_found() noexcept (true);
 };
 
 /// <summary>
@@ -313,7 +313,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~no_visible_worksheets() noexcept;
+    virtual ~no_visible_worksheets() noexcept (true);
 };
 
 /// <summary>
@@ -335,7 +335,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~unhandled_switch_case() noexcept;
+    virtual ~unhandled_switch_case() noexcept (true);
 };
 
 /// <summary>
@@ -358,7 +358,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~unsupported() noexcept;
+    virtual ~unsupported() noexcept (true);
 };
 
 } // namespace xlnt
