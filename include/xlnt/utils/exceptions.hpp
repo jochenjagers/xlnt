@@ -52,7 +52,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~exception();
+    virtual ~exception() noexcept;
 
     /// <summary>
     /// Sets the message after the xlnt::exception is constructed. This can show
@@ -86,7 +86,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_parameter();
+    virtual ~invalid_parameter() noexcept;
 };
 
 /// <summary>
@@ -108,7 +108,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_sheet_title();
+    virtual ~invalid_sheet_title() noexcept;
 };
 
 /// <summary>
@@ -130,7 +130,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~missing_number_format();
+    virtual ~missing_number_format() noexcept;
 };
 
 /// <summary>
@@ -153,7 +153,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_file();
+    virtual ~invalid_file() noexcept;
 };
 
 /// <summary>
@@ -176,7 +176,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~illegal_character();
+    virtual ~illegal_character() noexcept;
 };
 
 /// <summary>
@@ -198,7 +198,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_data_type();
+    virtual ~invalid_data_type() noexcept;
 };
 
 /// <summary>
@@ -220,7 +220,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_column_index();
+    virtual ~invalid_column_index() noexcept;
 };
 
 /// <summary>
@@ -247,7 +247,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_cell_reference();
+    virtual ~invalid_cell_reference() noexcept;
 };
 
 /// <summary>
@@ -269,7 +269,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~invalid_attribute();
+    virtual ~invalid_attribute() noexcept;
 };
 
 /// <summary>
@@ -291,7 +291,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~key_not_found();
+    virtual ~key_not_found() noexcept;
 };
 
 /// <summary>
@@ -313,7 +313,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~no_visible_worksheets();
+    virtual ~no_visible_worksheets() noexcept;
 };
 
 /// <summary>
@@ -335,7 +335,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~unhandled_switch_case();
+    virtual ~unhandled_switch_case() noexcept;
 };
 
 /// <summary>
@@ -358,7 +358,7 @@ public:
     /// <summary>
     /// Destructor
     /// </summary>
-    virtual ~unsupported();
+    virtual ~unsupported() noexcept;
 };
 
 } // namespace xlnt
