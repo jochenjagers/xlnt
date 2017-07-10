@@ -32,7 +32,7 @@ exception::exception(const std::string &message)
     this->message(message);
 }
 
-exception::~exception()
+exception::~exception() noexcept (true)
 {
 }
 
@@ -50,7 +50,7 @@ unhandled_switch_case::unhandled_switch_case()
 {
 }
 
-unhandled_switch_case::~unhandled_switch_case()
+unhandled_switch_case::~unhandled_switch_case() noexcept (true)
 {
 }
 
@@ -59,7 +59,7 @@ invalid_sheet_title::invalid_sheet_title(const std::string &title)
 {
 }
 
-invalid_sheet_title::~invalid_sheet_title()
+invalid_sheet_title::~invalid_sheet_title() noexcept (true)
 {
 }
 
@@ -68,7 +68,7 @@ invalid_column_index::invalid_column_index()
 {
 }
 
-invalid_column_index::~invalid_column_index()
+invalid_column_index::~invalid_column_index() noexcept (true)
 {
 }
 
@@ -77,7 +77,7 @@ invalid_data_type::invalid_data_type()
 {
 }
 
-invalid_data_type::~invalid_data_type()
+invalid_data_type::~invalid_data_type() noexcept (true)
 {
 }
 
@@ -86,7 +86,7 @@ invalid_file::invalid_file(const std::string &filename)
 {
 }
 
-invalid_file::~invalid_file()
+invalid_file::~invalid_file() noexcept (true)
 {
 }
 
@@ -101,7 +101,7 @@ invalid_cell_reference::invalid_cell_reference(const std::string &coord_string)
 {
 }
 
-invalid_cell_reference::~invalid_cell_reference()
+invalid_cell_reference::~invalid_cell_reference() noexcept (true)
 {
 }
 
@@ -110,7 +110,7 @@ illegal_character::illegal_character(char c)
 {
 }
 
-illegal_character::~illegal_character()
+illegal_character::~illegal_character() noexcept (true)
 {
 }
 
@@ -119,7 +119,7 @@ invalid_parameter::invalid_parameter()
 {
 }
 
-invalid_parameter::~invalid_parameter()
+invalid_parameter::~invalid_parameter() noexcept (true)
 {
 }
 
@@ -128,7 +128,7 @@ invalid_attribute::invalid_attribute()
 {
 }
 
-invalid_attribute::~invalid_attribute()
+invalid_attribute::~invalid_attribute() noexcept (true)
 {
 }
 
@@ -137,7 +137,7 @@ key_not_found::key_not_found()
 {
 }
 
-key_not_found::~key_not_found()
+key_not_found::~key_not_found() noexcept (true)
 {
 }
 
@@ -146,7 +146,7 @@ no_visible_worksheets::no_visible_worksheets()
 {
 }
 
-no_visible_worksheets::~no_visible_worksheets()
+no_visible_worksheets::~no_visible_worksheets() noexcept (true)
 {
 }
 
@@ -155,7 +155,7 @@ unsupported::unsupported(const std::string &message)
 {
 }
 
-unsupported::~unsupported()
+unsupported::~unsupported() noexcept (true)
 {
 }
 
