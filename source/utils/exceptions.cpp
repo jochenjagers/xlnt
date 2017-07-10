@@ -41,7 +41,7 @@ void exception::message(const std::string &message)
     message_ = message;
 }
 
-missing_number_format::~missing_number_format()
+missing_number_format::~missing_number_format() noexcept (true)
 {
 }
 
