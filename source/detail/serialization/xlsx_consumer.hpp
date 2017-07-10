@@ -342,7 +342,7 @@ private:
 	/// <summary>
 	/// The ZIP file containing the files that make up the OOXML package.
 	/// </summary>
-	std::unique_ptr<izstream> archive_;
+	std::shared_ptr<izstream> archive_;
 
 	/// <summary>
 	/// Map of sheet titles to relationship IDs.

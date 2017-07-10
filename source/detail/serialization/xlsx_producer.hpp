@@ -180,8 +180,8 @@ private:
 	const workbook &source_;
     
 	ozstream *archive_;
-    std::unique_ptr<xml::serializer> current_part_serializer_;
-    std::unique_ptr<std::streambuf> current_part_streambuf_;
+    std::shared_ptr<xml::serializer> current_part_serializer_;
+    std::shared_ptr<std::streambuf> current_part_streambuf_;
     std::ostream current_part_stream_;
 };
 

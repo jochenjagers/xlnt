@@ -545,7 +545,7 @@ compound_document::~compound_document()
 
 void compound_document::close()
 {
-    stream_out_buffer_.reset(nullptr);
+    stream_out_buffer_.reset();
 }
 
 std::size_t compound_document::sector_size()

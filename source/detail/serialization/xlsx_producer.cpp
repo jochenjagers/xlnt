@@ -41,7 +41,7 @@
 #include <xlnt/worksheet/header_footer.hpp>
 #include <xlnt/worksheet/worksheet.hpp>
 
-using namespace std::string_literals;
+//using namespace std::string_literals;
 
 namespace {
 
@@ -169,7 +169,7 @@ void xlsx_producer::write_content_types()
     const auto content_types_path = path("[Content_Types].xml");
     begin_part(content_types_path);
 
-    const auto xmlns = "http://schemas.openxmlformats.org/package/2006/content-types"s;
+    const std::string xmlns = "http://schemas.openxmlformats.org/package/2006/content-types";
 
     write_start_element(xmlns, "Types");
     write_namespace(xmlns, "");

@@ -215,9 +215,9 @@ private:
     std::istream *in_;
     std::ostream *out_;
 
-    std::unique_ptr<compound_document_istreambuf> stream_in_buffer_;
+    std::shared_ptr<compound_document_istreambuf> stream_in_buffer_;
     std::istream stream_in_;
-    std::unique_ptr<compound_document_ostreambuf> stream_out_buffer_;
+    std::shared_ptr<compound_document_ostreambuf> stream_out_buffer_;
     std::ostream stream_out_;
 };
 

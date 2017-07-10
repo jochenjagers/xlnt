@@ -477,12 +477,12 @@ ozstream::~ozstream()
     write_int(destination_stream_, static_cast<std::uint16_t>(0)); // zip comment
 }
 
-std::unique_ptr<std::streambuf> ozstream::open(const path &filename)
+std::shared_ptr<std::streambuf> ozstream::open(const path &filename)
 {
     zheader header;
     header.filename = filename.string();
     file_headers_.push_back(header);
-    return std::make_unique<zip_streambuf_compress>(&file_headers_.back(), destination_stream_);
+    return std::make_shared<zip_streambuf_compress>(&file_headers_.back(), destination_stream_);
 }
 
 izstream::izstream(std::istream &stream)
@@ -586,7 +586,7 @@ bool izstream::read_central_header()
     return true;
 }
 
-std::unique_ptr<std::streambuf> izstream::open(const path &filename) const
+std::shared_ptr<std::streambuf> izstream::open(const path &filename) const
 {
     if (!has_file(filename))
     {
@@ -595,7 +595,7 @@ std::unique_ptr<std::streambuf> izstream::open(const path &filename) const
 
     auto header = file_headers_.at(filename.string());
     source_stream_.seekg(header.header_offset);
-    return std::make_unique<zip_streambuf_decompress>(source_stream_, header);
+    return std::make_shared<zip_streambuf_decompress>(source_stream_, header);
 }
 
 std::string izstream::read(const path &filename) const
