@@ -25,6 +25,7 @@
 #include <numeric> // for std::accumulate
 #include <string>
 #include <unordered_set>
+#include <set>
 
 #include <detail/constants.hpp>
 #include <detail/implementations/workbook_impl.hpp>
@@ -288,7 +289,7 @@ void xlsx_producer::write_property(const std::string &name, const variant &value
             write_start_element(constants::ns("vt"), "vector");
 
             auto vector = value.get<std::vector<variant>>();
-            std::unordered_set<variant::type> types;
+            std::set<variant::type> types;
 
             for (const auto &element : vector)
             {
@@ -3029,3 +3030,4 @@ void xlsx_producer::write_namespace(const std::string &ns, const std::string &pr
 
 } // namespace detail
 } // namepsace xlnt
+
