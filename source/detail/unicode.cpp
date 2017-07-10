@@ -21,7 +21,6 @@
 // @license: http://www.opensource.org/licenses/mit-license.php
 // @author: see AUTHORS file
 
-#include <codecvt>
 #include <locale>
 #include <string>
 
@@ -30,39 +29,42 @@
 namespace xlnt {
 namespace detail {
 
-#ifdef _MSC_VER
+// TODO - Undo this after changing to newer compiler
+//#ifdef _MSC_VER
+//std::u16string utf8_to_utf16(const std::string &utf8_string)
+//{
+//    // use wchar_t instead of char16_t on Windows because of a bug in MSVC
+//    // error LNK2001: unresolved external symbol std::codecvt::id
+//    // https://connect.microsoft.com/VisualStudio/Feedback/Details/1403302
+//    auto converted = std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>,
+//        wchar_t>{}.from_bytes(utf8_string);
+//    return std::u16string(converted.begin(), converted.end());
+//}
+
+//std::string utf16_to_utf8(const std::u16string &utf16_string)
+//{
+//    std::wstring utf16_wstring(utf16_string.begin(), utf16_string.end());
+//    // use wchar_t instead of char16_t on Windows because of a bug in MSVC
+//    // error LNK2001: unresolved external symbol std::codecvt::id
+//    // https://connect.microsoft.com/VisualStudio/Feedback/Details/1403302
+//    return std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>,
+//        wchar_t>{}.to_bytes(utf16_wstring);
+//}
+//#else
 std::u16string utf8_to_utf16(const std::string &utf8_string)
 {
-    // use wchar_t instead of char16_t on Windows because of a bug in MSVC
-    // error LNK2001: unresolved external symbol std::codecvt::id
-    // https://connect.microsoft.com/VisualStudio/Feedback/Details/1403302
-    auto converted = std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>,
-        wchar_t>{}.from_bytes(utf8_string);
-    return std::u16string(converted.begin(), converted.end());
+    // TODO - Undo this after changing to newer compiler
+       return std::wstring(utf8_string.begin(), utf8_string.end());
+    //return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}.from_bytes(utf8_string);
 }
 
 std::string utf16_to_utf8(const std::u16string &utf16_string)
 {
-    std::wstring utf16_wstring(utf16_string.begin(), utf16_string.end());
-    // use wchar_t instead of char16_t on Windows because of a bug in MSVC
-    // error LNK2001: unresolved external symbol std::codecvt::id
-    // https://connect.microsoft.com/VisualStudio/Feedback/Details/1403302
-    return std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>,
-        wchar_t>{}.to_bytes(utf16_wstring);
+    // TODO - Undo this after changing to newer compiler
+    return std::string(utf16_string.begin(), utf16_string.end());
+    //return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}.to_bytes(utf16_string);
 }
-#else
-std::u16string utf8_to_utf16(const std::string &utf8_string)
-{
-    return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>,
-        char16_t>{}.from_bytes(utf8_string);
-}
-
-std::string utf16_to_utf8(const std::u16string &utf16_string)
-{
-    return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>,
-        char16_t>{}.to_bytes(utf16_string);
-}
-#endif
+//#endif
 
 std::string latin1_to_utf8(const std::string &latin1)
 {
