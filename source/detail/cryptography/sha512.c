@@ -232,6 +232,7 @@ void sha512_compress(uint64_t state[8], const uint8_t block[128]) {
 
 
 void sha512_hash(const uint8_t *message, size_t len, uint64_t hash[8]) {
+    int i;
     hash[0] = UINT64_C(0x6A09E667F3BCC908);
     hash[1] = UINT64_C(0xBB67AE8584CAA73B);
     hash[2] = UINT64_C(0x3C6EF372FE94F82B);
@@ -261,7 +262,7 @@ void sha512_hash(const uint8_t *message, size_t len, uint64_t hash[8]) {
 
     block[BLOCK_SIZE - 1] = (uint8_t)((len & 0x1FU) << 3);
     len >>= 5;
-    for (int i = 1; i < LENGTH_SIZE; i++, len >>= 8)
+    for (i = 1; i < LENGTH_SIZE; i++, len >>= 8)
         block[BLOCK_SIZE - 1 - i] = (uint8_t)(len & 0xFFU);
     sha512_compress(hash, block);
 }
